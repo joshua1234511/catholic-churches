@@ -1,0 +1,11 @@
+/.htaccess
+/sites/default/settings.php
+/sites/default/files/php/twig
+
+# Ignore Mac system files
+.DS_store
+/sites/default/files/css
+/sites/default/files/js
+/sites/default/files/styles
+/sites/default/files/private
+/sites/default/files/tmp

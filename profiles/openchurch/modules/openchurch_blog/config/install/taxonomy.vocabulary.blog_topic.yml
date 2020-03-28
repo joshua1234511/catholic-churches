@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Blog Topic'
+vid: blog_topic
+description: ''
+weight: 0

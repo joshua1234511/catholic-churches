@@ -1,0 +1,28 @@
+name: 'OpenChurch Bulletin'
+description: 'Electronic bulletin for viewing and download.'
+type: module
+dependencies:
+  - block
+  - datetime
+  - entity_reference
+  - field
+  - file
+  - image
+  - menu_ui
+  - node
+  - openchurch_gallery
+  - path
+  - text
+  - user
+  - views
+features: true
+# version: 8.x-2.1
+# core: 8.x
+# project: openchurch
+# datestamp: 1513982875
+
+# Information added by Drupal.org packaging script on 2019-08-16
+version: '8.x-2.3'
+core: '8.x'
+project: 'openchurch'
+datestamp: 1565983347
