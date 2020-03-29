@@ -49,14 +49,14 @@ function openchurch_menu_links_discovered_alter(&$links) {
  * Implements hook_entity_update().
  */
 function openchurch_entity_update(Drupal\Core\Entity\EntityInterface $entity) {
-  _openchurch_node_auto_alias($entity);
+  //_openchurch_node_auto_alias($entity);
 }
 
 /**
  * Implements hook_entity_insert().
  */
 function openchurch_entity_insert(Drupal\Core\Entity\EntityInterface $entity) {
-  _openchurch_node_auto_alias($entity);
+  //_openchurch_node_auto_alias($entity);
 }
 
 /**
@@ -64,54 +64,54 @@ function openchurch_entity_insert(Drupal\Core\Entity\EntityInterface $entity) {
  *
  * @param \Drupal\Core\Entity\EntityInterface $entity
  */
-function _openchurch_node_auto_alias(Drupal\Core\Entity\EntityInterface $entity) {
-  $aliases = array(
-    'ministry' => '/ministry/',
-    'gallery' => '/media/gallery/',
-    'video' => '/media/video/',
-    'podcast' => '/media/podcast/',
-    'event' => '/event/',
-    'charity' => '/give/',
-    'staff' => '/staff/',
-    'page' => '/page/',
-    'blog' => '/blog/',
-  );
+// function _openchurch_node_auto_alias(Drupal\Core\Entity\EntityInterface $entity) {
+//   $aliases = array(
+//     'ministry' => '/ministry/',
+//     'gallery' => '/media/gallery/',
+//     'video' => '/media/video/',
+//     'podcast' => '/media/podcast/',
+//     'event' => '/event/',
+//     'charity' => '/give/',
+//     'staff' => '/staff/',
+//     'page' => '/page/',
+//     'blog' => '/blog/',
+//   );
 
-  foreach ($aliases as $node_type => $node_alias_path) {
-    if ($entity->bundle() == $node_type) {
-      $nid = $entity->id();
+//   foreach ($aliases as $node_type => $node_alias_path) {
+//     if ($entity->bundle() == $node_type) {
+//       $nid = $entity->id();
 
-      // Get the node title.
-      $title = $entity->title->getValue()[0]['value'];
-      // Convert node title to machine path.
-      $alias = $machine_name = _openchurch_clean_alias($title);
+//       // Get the node title.
+//       $title = $entity->title->getValue()[0]['value'];
+//       // Convert node title to machine path.
+//       $alias = $machine_name = _openchurch_clean_alias($title);
 
-      $c = 0;
+//       $c = 0;
 
-      // Look for existing alias.
-      do {
-        $alias_exists = db_query('SELECT pid FROM {url_alias}
-          WHERE alias = :alias AND source != :source',
-          array(
-            ':alias' => $node_alias_path . $alias,
-            ':source' => '/node/' . $nid
-          )
-        )->fetchColumn();
+//       // Look for existing alias.
+//       do {
+//         $alias_exists = db_query('SELECT id FROM {path_alias}
+//           WHERE alias = :alias AND path != :source',
+//           array(
+//             ':alias' => $node_alias_path . $alias,
+//             ':source' => '/node/' . $nid
+//           )
+//         )->fetchColumn();
 
-        // If alias exists, increment.
-        if ($alias_exists) {
-          $alias = $machine_name . '-' . $c++;
-        }
-        else {
-          break;
-        }
-      } while ($alias_exists);
+//         // If alias exists, increment.
+//         if ($alias_exists) {
+//           $alias = $machine_name . '-' . $c++;
+//         }
+//         else {
+//           break;
+//         }
+//       } while ($alias_exists);
 
-      $path = \Drupal::service('path.alias_storage')
-        ->save('/node/' . $nid, $node_alias_path . $alias);
-    }
-  }
-}
+//       $path = \Drupal::service('path.alias_storage')
+//         ->save('/node/' . $nid, $node_alias_path . $alias);
+//     }
+//   }
+// }
 
 /**
  * OpenChurch clean alias.

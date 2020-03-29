@@ -234,4 +234,8 @@ body,
     padding: 0 10px;
     width: 25%;
   }
+  .region.region-sidebar-second {
+    margin-top: 60px;
+    padding-top: 15px;
+  }
 }

@@ -3,7 +3,7 @@ type: theme
 description: 'OpenChurch (bartik) sub-theme.'
 package: OpenChurch
 base theme: bartik
-# core: '8.x'
+core: '8.x'
 
 libraries:
   - openchurch_theme/base
@@ -12,6 +12,7 @@ regions:
   header: Header
   primary_menu: 'Primary menu'
   secondary_menu: 'Secondary menu'
+  user_specific_menu: 'User specific menu'
   help: Help
   page_top: 'Page top'
   page_bottom: 'Page bottom'
@@ -29,9 +30,3 @@ regions:
   footer_fourth: 'Footer fourth'
   footer_fifth: 'Footer fifth'
   footer: 'Footer'
-
-# Information added by Drupal.org packaging script on 2019-08-16
-version: '8.x-2.3'
-core: '8.x'
-project: 'openchurch'
-datestamp: 1565983347

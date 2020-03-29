@@ -46,6 +46,9 @@ body.node--type-event #event-url a.button {
 h2.title, h3.title, #content .block > h2 {
   background: #adcd84;
 }
+div#block-copyright {
+  color: #fff;
+}
 @media all and (min-width: 901px) {
   #block-openchurch-theme-main-menu div.content > ul > li > a {
     color: #fffeff;

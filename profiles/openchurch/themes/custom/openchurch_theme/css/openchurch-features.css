@@ -504,7 +504,6 @@ body.page-node-type-event {
   }
   .openchurch-ministries-list .views-row {
     position: relative;
-    min-height: 100px;
   }
   .openchurch-ministries-list h2.node__title {
     font-size: 1.5em;
